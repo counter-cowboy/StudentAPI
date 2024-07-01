@@ -25,4 +25,6 @@ Route::prefix('/groups')
         Route::patch('/{group}/edit', [GroupController::class,'Update']);
         Route::delete('/{group}', [GroupController::class, 'Destroy']);
 
+        Route::
+
     });
