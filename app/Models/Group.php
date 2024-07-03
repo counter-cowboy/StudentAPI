@@ -13,9 +13,9 @@ class Group extends Model
     use SoftDeletes, HasFactory;
 
     protected $guarded = false;
-//    protected $with=['lections'];
+//    protected $with=['students'];
 
-    public function Students(): HasMany
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class);
     }

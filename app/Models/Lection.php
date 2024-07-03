@@ -13,7 +13,7 @@ class Lection extends Model
 
     protected $table = 'lections';
     protected $guarded=false;
-    protected $with = ['groups'];
+//    protected $with = ['groups'];
 
     public function groups(): BelongsToMany
     {
