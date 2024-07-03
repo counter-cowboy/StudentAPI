@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Student;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /** @mixin \App\Models\Student */
-class StudentResource extends JsonResource
+class StudentStoreResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
@@ -14,8 +14,7 @@ class StudentResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'class_id' => $this->class_id,
-            'lections'=> $this->group()->lections()
+            'group' => $this->group->name
         ];
     }
 }

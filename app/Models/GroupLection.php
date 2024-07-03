@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class GroupLection extends Model
 {
     use SoftDeletes;
-    protected $table='group_lections';
-    protected $fillable = [
-        'class_id',
-        'lection_id',
-    ];
+
+    protected $table = 'group_lection';
+    protected $guarded = false;
 }

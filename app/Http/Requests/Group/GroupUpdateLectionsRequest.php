@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Requests\Lection;
+namespace App\Http\Requests\Group;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LectionRequest extends FormRequest
+class GroupUpdateLectionsRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
-            'title' => ['required'],
-            'description' => ['required'],
+            'lections' => 'array|required',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'title.required'=>'Title required',
-            'description.required'=>'Lection description required'
+
+          'name.array'=> 'Lections list must array of numbers'
         ];
+
     }
 
     public function authorize(): bool

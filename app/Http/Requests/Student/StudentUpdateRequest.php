@@ -4,13 +4,12 @@ namespace App\Http\Requests\Student;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StudentRequest extends FormRequest
+class StudentUpdateRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
             'name' => ['required'],
-            'email' => ['required', 'email', 'unique:students', 'max:254'],
             'group_id' => ['nullable', 'integer'],
         ];
     }
@@ -19,10 +18,6 @@ class StudentRequest extends FormRequest
     {
         return [
             'name.required' => 'Name is required',
-            'email.required' => 'Email is required',
-            'email.email' => 'Address must be in e_mail format',
-            'email.unique' => 'Email is not vacated',
-            'email.max' => 'Email is too long',
             'group_id.integer' => 'Group ID must be a number'
         ];
     }

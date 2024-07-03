@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGroupLectionsTable extends Migration
+class CreateGroupLectionTable extends Migration
 {
     public function up()
     {
-        Schema::create('group_lections', function (Blueprint $table) {
+        Schema::create('group_lection', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('group_id')->nullable();
             $table->unsignedInteger('lection_id')->nullable();

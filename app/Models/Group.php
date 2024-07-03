@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -9,11 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Group extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
-    protected $fillable = [
-        'name',
-    ];
+    protected $guarded = false;
+
+//    protected $with=['students'];
 
     public function Students(): HasMany
     {

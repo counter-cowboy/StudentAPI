@@ -13,10 +13,10 @@ class CreateStudentsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
 
-            $table->unsignedBigInteger('group_id')->nullable();
+//            $table->unsignedBigInteger('group_id')->nullable();
             $table->index('group_id');
-            $table->foreign('group_id')->on('groups')
-                ->references('id')->nullOnDelete();
+            $table->foreignId('group_id')->nullable()
+                ->constrained()->onDelete('set null');
 
             $table->softDeletes();
             $table->timestamps();
