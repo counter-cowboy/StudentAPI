@@ -13,9 +13,10 @@ class Lection extends Model
 
     protected $table = 'lections';
     protected $guarded=false;
+
 //    protected $with = ['groups'];
 
-    public function groups(): BelongsToMany
+    public function Groups(): BelongsToMany
     {
         return $this->belongsToMany(Group::class);
     }

@@ -10,12 +10,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Student extends Model
 {
     use SoftDeletes, HasFactory;
+
     protected $table='students';
+
     protected $with = ['group'];
 
     protected $guarded=false;
 
-    public function group(): BelongsTo
+    public function Group(): BelongsTo
     {
         return $this->belongsTo(Group::class);
     }

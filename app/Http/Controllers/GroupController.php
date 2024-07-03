@@ -9,7 +9,6 @@ use App\Http\Resources\Group\GroupLectionResource;
 use App\Http\Resources\Group\GroupResource;
 use App\Http\Resources\Group\GroupUpdateResource;
 use App\Models\Group;
-use function MongoDB\BSON\fromJSON;
 
 class GroupController extends GroupBaseController
 {
@@ -20,7 +19,7 @@ class GroupController extends GroupBaseController
 
     public function Store(GroupRequest $request)
     {
-        return new GroupResource(Group::create($request->validated()));
+        return new GroupResource(Group::firstOrCreate($request->validated()));
     }
 
     public function ShowLections(Group $group)

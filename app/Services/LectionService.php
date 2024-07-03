@@ -4,15 +4,18 @@ namespace App\Services;
 
 use App\Models\Lection;
 
-class LectionService
-{
+class LectionService{
 
     public function Show(Lection $lection): void
     {
         foreach ($lection->groups as $group)
             $students[] = $group->students->pluck('name');
 
-        $lection->students = $students;
+        foreach ($students as $student)
+            foreach ($student as $std)
+                $studentsArr[] = $std;
+
+        $lection->students = $studentsArr;
     }
 
     public function Store($data): Lection
@@ -20,9 +23,9 @@ class LectionService
         return Lection::firstOrCreate($data);
     }
 
-    public  function  Update()
+    public function Update()
     {
-
+        //TODO we decided not to use it because simple business logic lays in controller
 
     }
 }
