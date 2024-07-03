@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Lection;
 
+use App\Http\Resources\GropLection\GroupLectionResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,7 +18,7 @@ class LectionResource extends JsonResource
 
             'class_lection_id' => $this->class_lection_id,
 
-            'classLection' => new ClassLectionResource($this->whenLoaded('classLection')),
+            'classLection' => new GroupLectionResource($this->whenLoaded('classLection')),
         ];
     }
 }
